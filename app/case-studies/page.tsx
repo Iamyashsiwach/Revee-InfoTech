@@ -1,14 +1,26 @@
+/**
+ * Case Studies Page for Revee InfoTech website
+ * Displays a collection of case studies in a grid layout with filtering and search
+ */
 import { Metadata } from "next";
 import CaseStudyCard from "@/components/case-study-card";
 import CTA from "@/components/cta";
 import Image from "next/image";
 
+/**
+ * Metadata for SEO optimization
+ */
 export const metadata: Metadata = {
   title: "Case Studies | Revee InfoTech",
   description: "Explore our case studies showcasing successful network integration and IT infrastructure projects",
 };
 
+/**
+ * Main case studies page component
+ * Displays a collection of case studies with filtering options and results overview
+ */
 export default function CaseStudiesPage() {
+  // Sample case studies data
   const caseStudies = [
     {
       title: "Enterprise Network Overhaul for Global Manufacturing Company",
@@ -62,7 +74,7 @@ export default function CaseStudiesPage() {
 
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero Section with heading and industry filters */}
       <section className="py-16 md:py-24 bg-white text-navy relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-2 bg-teal"></div>
         
@@ -71,13 +83,14 @@ export default function CaseStudiesPage() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Left column with heading and industry tags */}
             <div>
               <div className="w-24 h-2 bg-teal mb-6"></div>
               <h1 className="text-4xl md:text-5xl font-poppins font-bold mb-6 text-navy">
                 Our <span className="text-teal">Success Stories</span>
               </h1>
               <p className="text-xl text-gray-700 mb-6">
-                Explore how we've helped organizations across various industries transform their network infrastructure and technology systems.
+                Explore how we&apos;ve helped organizations across various industries transform their network infrastructure and technology systems.
               </p>
               <div className="flex flex-wrap gap-3">
                 <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-medium">Manufacturing</span>
@@ -87,6 +100,7 @@ export default function CaseStudiesPage() {
                 <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">Education</span>
               </div>
             </div>
+            {/* Right column with featured image - hidden on mobile */}
             <div className="hidden lg:block">
               <div className="relative rounded-lg overflow-hidden shadow-xl border-8 border-white">
                 <div className="aspect-video relative">
@@ -103,10 +117,11 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Filters and Search */}
+      {/* Filters and Search Bar Section */}
       <section className="py-6 bg-blue-50 border-y border-gray-200">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
+            {/* Industry filter buttons */}
             <div className="flex flex-wrap gap-2 mb-4 md:mb-0">
               <button className="px-4 py-2 bg-navy text-white rounded-md text-sm font-medium">All Industries</button>
               <button className="px-4 py-2 bg-white hover:bg-gray-100 text-gray-700 rounded-md text-sm font-medium border border-gray-200">Healthcare</button>
@@ -114,6 +129,7 @@ export default function CaseStudiesPage() {
               <button className="px-4 py-2 bg-orange-500 text-white rounded-md text-sm font-medium">Manufacturing</button>
               <button className="px-4 py-2 bg-white hover:bg-gray-100 text-gray-700 rounded-md text-sm font-medium border border-gray-200">Education</button>
             </div>
+            {/* Search input field */}
             <div className="w-full md:w-auto">
               <div className="relative">
                 <input
@@ -132,11 +148,12 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Case Studies Grid */}
+      {/* Case Studies Grid Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {caseStudies.map((caseStudy, index) => (
+            {/* Map through case studies array to display cards */}
+            {caseStudies.map((caseStudy) => (
               <div key={caseStudy.slug}>
                 <CaseStudyCard
                   title={caseStudy.title}
@@ -152,7 +169,7 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Results Overview */}
+      {/* Results Overview Section with metrics */}
       <section className="py-16 md:py-24 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
@@ -167,22 +184,27 @@ export default function CaseStudiesPage() {
             </div>
           </div>
 
+          {/* Metrics cards with hover effects */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            {/* Performance metric */}
             <div className="bg-white p-8 rounded-lg shadow-lg text-center border-t-4 border-teal hover:transform hover:-translate-y-1 transition-transform duration-300">
               <div className="text-teal text-4xl md:text-5xl font-bold mb-2">40%</div>
               <p className="text-navy font-semibold">Average Performance Improvement</p>
             </div>
 
+            {/* Uptime metric */}
             <div className="bg-white p-8 rounded-lg shadow-lg text-center border-t-4 border-navy hover:transform hover:-translate-y-1 transition-transform duration-300">
               <div className="text-navy text-4xl md:text-5xl font-bold mb-2">99.9%</div>
               <p className="text-navy font-semibold">Network Uptime</p>
             </div>
 
+            {/* Incident reduction metric */}
             <div className="bg-white p-8 rounded-lg shadow-lg text-center border-t-4 border-orange-500 hover:transform hover:-translate-y-1 transition-transform duration-300">
               <div className="text-orange-500 text-4xl md:text-5xl font-bold mb-2">60%</div>
               <p className="text-navy font-semibold">Reduction in IT Incidents</p>
             </div>
 
+            {/* Cost savings metric */}
             <div className="bg-white p-8 rounded-lg shadow-lg text-center border-t-4 border-blue-500 hover:transform hover:-translate-y-1 transition-transform duration-300">
               <div className="text-blue-500 text-4xl md:text-5xl font-bold mb-2">35%</div>
               <p className="text-navy font-semibold">Average Cost Savings</p>
@@ -191,7 +213,7 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Call-to-Action Section */}
       <CTA
         title="Ready to Achieve Similar Results?"
         subtitle="Contact us today to discuss how we can help your business transform its network infrastructure."

@@ -1,3 +1,7 @@
+/**
+ * Home Page Component for Revee InfoTech website
+ * Main landing page showcasing services, industries, testimonials and company features
+ */
 import Hero from "@/components/hero";
 import ServiceCard from "@/components/service-card";
 import Testimonial from "@/components/testimonial";
@@ -7,6 +11,10 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
+  /**
+   * Services data array with information about each service offering
+   * Used to generate service cards in the services section
+   */
   const services = [
     {
       icon: (
@@ -54,6 +62,10 @@ export default function Home() {
     },
   ];
 
+  /**
+   * Industries data array with information about each industry we serve
+   * Used to generate industry cards in the industries section
+   */
   const industries = [
     {
       name: "Manufacturing",
@@ -103,6 +115,10 @@ export default function Home() {
     },
   ];
 
+  /**
+   * Testimonials data array with client feedback
+   * Used to generate testimonial cards in the testimonials section
+   */
   const testimonials = [
     {
       quote: "Revee InfoTech transformed our infrastructure, improving speed and reliability across all our locations. Their team was professional and knowledgeable from planning to implementation.",
@@ -129,12 +145,15 @@ export default function Home() {
 
   return (
     <>
+      {/* Hero Section - Main banner with call to action */}
       <Hero />
       
-      {/* Services Section */}
+      {/* Services Section - Overview of our main service offerings */}
       <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+        {/* Decorative background element */}
         <div className="absolute top-0 left-0 w-1/2 h-full bg-blue-50/50 -skew-x-12 transform origin-top-left z-0"></div>
         <div className="container mx-auto px-4 relative z-10">
+          {/* Section heading */}
           <div className="text-center mb-12">
             <div className="w-24 h-2 bg-teal mx-auto mb-4"></div>
             <h2 className="text-3xl md:text-4xl font-poppins font-bold text-navy mb-4">Our Services</h2>
@@ -143,8 +162,9 @@ export default function Home() {
             </p>
           </div>
           
+          {/* Services grid display */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <div key={service.slug} className="transform transition-transform duration-300 hover:-translate-y-2">
                 <ServiceCard
                   icon={service.icon}
@@ -157,6 +177,7 @@ export default function Home() {
             ))}
           </div>
 
+          {/* Services CTA button */}
           <div className="text-center mt-10">
             <Button asChild className="bg-teal hover:bg-teal/90 text-white">
               <Link href="/services">View All Services</Link>
@@ -165,11 +186,13 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Industries We Serve */}
+      {/* Industries We Serve Section - Industries that benefit from our solutions */}
       <section className="py-16 md:py-24 bg-blue-50 relative overflow-hidden">
+        {/* Decorative background element */}
         <div className="absolute bottom-0 right-0 w-1/3 h-full bg-teal/5 -skew-x-12 transform origin-bottom-right z-0"></div>
         
         <div className="container mx-auto px-4 relative z-10">
+          {/* Section heading */}
           <div className="text-center mb-12">
             <div className="w-24 h-2 bg-teal mx-auto mb-4"></div>
             <h2 className="text-3xl md:text-4xl font-poppins font-bold text-navy mb-4">Industries We Serve</h2>
@@ -178,9 +201,10 @@ export default function Home() {
             </p>
           </div>
           
+          {/* Industry cards grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {industries.map((industry, index) => (
-              <div key={index} className={`bg-white rounded-lg shadow-lg p-6 border-t-4 ${industry.borderColor} hover:shadow-xl transition-shadow duration-300`}>
+            {industries.map((industry) => (
+              <div key={industry.name} className={`bg-white rounded-lg shadow-lg p-6 border-t-4 ${industry.borderColor} hover:shadow-xl transition-shadow duration-300`}>
                 <div className={`w-12 h-12 rounded-full ${industry.color.split(' ')[0]} flex items-center justify-center mb-4`}>
                   {industry.icon}
                 </div>
@@ -192,11 +216,13 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Why Choose Us Section */}
+      {/* Why Choose Us Section - Our company's value proposition */}
       <section className="py-16 md:py-24 bg-white relative">
+        {/* Decorative accent bar */}
         <div className="absolute top-0 left-0 w-full h-2 bg-teal"></div>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left column with value proposition text */}
             <div>
               <div className="w-24 h-2 bg-teal mb-4"></div>
               <h2 className="text-3xl md:text-4xl font-poppins font-bold text-navy mb-6">
@@ -269,7 +295,7 @@ export default function Home() {
               <div className="relative">
                 <div className="rounded-lg shadow-xl overflow-hidden relative border-8 border-white">
                   <div className="aspect-square relative">
-                    <Image
+        <Image
                       src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
                       alt="Network professional working on server infrastructure"
                       fill
@@ -377,13 +403,13 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Enhanced security posture</span>
-                </li>
+          </li>
                 <li className="flex items-center">
                   <svg className="h-5 w-5 text-teal mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Streamlined operations with integrated monitoring</span>
-                </li>
+          </li>
               </ul>
               <Button asChild className="bg-teal hover:bg-teal/90 text-white">
                 <Link href="/case-studies">View More Case Studies</Link>
@@ -393,7 +419,7 @@ export default function Home() {
             <div className="hidden lg:block">
               <div className="relative rounded-lg overflow-hidden shadow-xl border-8 border-white">
                 <div className="aspect-video relative">
-                  <Image
+            <Image
                     src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                     alt="Financial services network infrastructure"
                     fill

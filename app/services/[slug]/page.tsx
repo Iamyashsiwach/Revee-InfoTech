@@ -1,3 +1,7 @@
+/**
+ * Dynamic Service Page Component for Revee InfoTech website
+ * Displays detailed information about a specific service based on the URL slug
+ */
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,11 +9,14 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import CTA from "@/components/cta";
 
-interface ServicePageProps {
-  params: { slug: string };
-}
-
-export const generateMetadata = ({ params }: ServicePageProps): Metadata => {
+/**
+ * Generates metadata for the service page based on the slug parameter
+ * This function is called at build time by Next.js
+ * @param {Object} props - The props object
+ * @param {Object} props.params - The route parameters containing the slug
+ * @returns {Metadata} - The metadata for the page
+ */
+export const generateMetadata = ({ params }: { params: any }): Metadata => {
   const service = getServiceBySlug(params.slug);
   
   if (!service) {
@@ -25,6 +32,11 @@ export const generateMetadata = ({ params }: ServicePageProps): Metadata => {
   };
 };
 
+/**
+ * Helper function to retrieve a service by its slug
+ * @param {string} slug - The URL slug of the service to retrieve
+ * @returns {Object|undefined} - The service object if found, or undefined
+ */
 const getServiceBySlug = (slug: string) => {
   const services = [
     {
@@ -164,7 +176,13 @@ const getServiceBySlug = (slug: string) => {
   return services.find(service => service.slug === slug);
 };
 
-export default function ServicePage({ params }: ServicePageProps) {
+/**
+ * Service Page component that renders detailed information about a specific service
+ * @param {Object} props - The component props
+ * @param {Object} props.params - The route parameters containing the slug
+ * @returns {JSX.Element} - The rendered service page
+ */
+export default function Page({ params }: { params: any }) {
   const service = getServiceBySlug(params.slug);
   
   if (!service) {
@@ -173,8 +191,9 @@ export default function ServicePage({ params }: ServicePageProps) {
   
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero Section - Banner image with title overlay */}
       <section className="relative py-20 md:py-28 bg-navy text-white overflow-hidden">
+        {/* Background image with overlay */}
         <div className="absolute inset-0 opacity-30">
           <Image
             src={service.image}
@@ -186,15 +205,19 @@ export default function ServicePage({ params }: ServicePageProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-navy to-navy/80"></div>
         </div>
         
+        {/* Hero content */}
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <div>
+              {/* Service title */}
               <h1 className="text-4xl md:text-5xl font-poppins font-bold mb-6">
                 {service.title}
               </h1>
+              {/* Service long description */}
               <p className="text-xl text-gray-300 mb-8">
                 {service.longDescription}
               </p>
+              {/* CTA buttons */}
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white font-semibold px-6">
                   <Link href="/contact">Get Started</Link>
@@ -208,10 +231,11 @@ export default function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
       
-      {/* Features Section */}
+      {/* Features & Benefits Section - Two-column layout */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Features column */}
             <div>
               <h2 className="text-3xl font-poppins font-bold text-navy mb-6">
                 Key Features
@@ -219,17 +243,20 @@ export default function ServicePage({ params }: ServicePageProps) {
               <div className="space-y-6">
                 {service.features.map((feature, index) => (
                   <div key={index} className="flex items-start">
+                    {/* Checkmark icon */}
                     <div className="mt-1 bg-teal/10 rounded-full p-1.5 mr-4">
                       <svg className="h-5 w-5 text-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
+                    {/* Feature text */}
                     <p className="text-gray-700">{feature}</p>
                   </div>
                 ))}
               </div>
             </div>
             
+            {/* Benefits column */}
             <div>
               <h2 className="text-3xl font-poppins font-bold text-navy mb-6">
                 Benefits
@@ -237,11 +264,13 @@ export default function ServicePage({ params }: ServicePageProps) {
               <div className="space-y-6">
                 {service.benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start">
+                    {/* Shield icon */}
                     <div className="mt-1 bg-teal/10 rounded-full p-1.5 mr-4">
                       <svg className="h-5 w-5 text-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
                     </div>
+                    {/* Benefit text */}
                     <p className="text-gray-700">{benefit}</p>
                   </div>
                 ))}
@@ -251,9 +280,10 @@ export default function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
       
-      {/* Why Choose Us */}
+      {/* Why Choose Us Section - Value proposition cards */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
+          {/* Section heading */}
           <div className="max-w-3xl mx-auto text-center mb-12">
             <div>
               <h2 className="text-3xl md:text-4xl font-poppins font-bold text-navy mb-6">
@@ -265,7 +295,9 @@ export default function ServicePage({ params }: ServicePageProps) {
             </div>
           </div>
           
+          {/* Three-column grid of value proposition cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Certified Experts card */}
             <div className="bg-white p-8 rounded-lg shadow-md">
               <div className="text-teal mb-4 w-12 h-12 flex items-center justify-center rounded-md bg-teal/10">
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -278,6 +310,7 @@ export default function ServicePage({ params }: ServicePageProps) {
               </p>
             </div>
             
+            {/* Proven Methodology card */}
             <div className="bg-white p-8 rounded-lg shadow-md">
               <div className="text-teal mb-4 w-12 h-12 flex items-center justify-center rounded-md bg-teal/10">
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -290,6 +323,7 @@ export default function ServicePage({ params }: ServicePageProps) {
               </p>
             </div>
             
+            {/* Ongoing Support card */}
             <div className="bg-white p-8 rounded-lg shadow-md">
               <div className="text-teal mb-4 w-12 h-12 flex items-center justify-center rounded-md bg-teal/10">
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -305,7 +339,7 @@ export default function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
       
-      {/* Other Services */}
+      {/* Other Services Section - Link to all services */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
@@ -319,6 +353,7 @@ export default function ServicePage({ params }: ServicePageProps) {
             </div>
           </div>
           
+          {/* Button to view all services */}
           <div className="text-center">
             <Button asChild size="lg" className="bg-navy hover:bg-navy/90 text-white font-semibold px-8">
               <Link href="/services">View All Services</Link>
@@ -327,7 +362,7 @@ export default function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
       
-      {/* CTA */}
+      {/* CTA Section - Final call to action */}
       <CTA
         title={`Ready to Transform Your ${service.title}?`}
         subtitle="Contact us today for a free consultation and discover how our solutions can help your business grow."

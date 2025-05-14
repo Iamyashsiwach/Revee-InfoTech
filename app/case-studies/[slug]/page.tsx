@@ -1,3 +1,7 @@
+/**
+ * Dynamic Case Study Page Component for Revee InfoTech website
+ * Displays detailed information about a specific case study based on the URL slug
+ */
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,12 +9,20 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import CTA from "@/components/cta";
 
-interface CaseStudyPageProps {
-  params: { slug: string };
-}
-
-export const generateMetadata = ({ params }: CaseStudyPageProps): Metadata => {
-  const caseStudy = getCaseStudyBySlug(params.slug);
+/**
+ * Generates metadata for the case study page based on the slug parameter
+ * This function is called at build time by Next.js
+ * @param {Object} props - The component props
+ * @param {Object} props.params - The route parameters containing the slug
+ * @returns {Promise<Metadata>} - The metadata for the page
+ */
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: any
+}): Promise<Metadata> {
+  const slug = params?.slug;
+  const caseStudy = getCaseStudyBySlug(slug);
   
   if (!caseStudy) {
     return {
@@ -23,9 +35,15 @@ export const generateMetadata = ({ params }: CaseStudyPageProps): Metadata => {
     title: `${caseStudy.title} | Revee InfoTech Case Studies`,
     description: caseStudy.description,
   };
-};
+}
 
+/**
+ * Helper function to retrieve a case study by its slug
+ * @param {string} slug - The URL slug of the case study to retrieve
+ * @returns {object|undefined} - The case study object if found, or undefined
+ */
 const getCaseStudyBySlug = (slug: string) => {
+  // Array of case study data objects
   const caseStudies = [
     {
       slug: "globaltech-manufacturing",
@@ -123,11 +141,23 @@ const getCaseStudyBySlug = (slug: string) => {
     },
   ];
   
+  // Find and return the case study with the matching slug
   return caseStudies.find(caseStudy => caseStudy.slug === slug);
 };
 
-export default function CaseStudyPage({ params }: CaseStudyPageProps) {
-  const caseStudy = getCaseStudyBySlug(params.slug);
+/**
+ * Case Study Page component that renders detailed information about a specific case study
+ * @param {Object} props - The component props
+ * @param {Object} props.params - The route parameters containing the slug
+ * @returns {JSX.Element} - The rendered case study page
+ */
+export default function Page({ 
+  params 
+}: { 
+  params: any
+}) {
+  const slug = params?.slug;
+  const caseStudy = getCaseStudyBySlug(slug);
   
   if (!caseStudy) {
     notFound();
@@ -135,8 +165,9 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
   
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero Section - Banner image with title overlay */}
       <section className="relative py-20 md:py-28 bg-navy text-white overflow-hidden">
+        {/* Background image with overlay */}
         <div className="absolute inset-0 opacity-30">
           <Image
             src={caseStudy.image}
@@ -148,23 +179,29 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-navy to-navy/80"></div>
         </div>
         
+        {/* Hero content */}
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <div>
+              {/* Industry badge */}
               <div className="mb-4">
                 <span className="inline-block px-3 py-1 bg-teal/10 text-teal rounded-full text-sm font-medium">
                   {caseStudy.industry}
                 </span>
               </div>
+              {/* Case study title */}
               <h1 className="text-3xl md:text-4xl font-poppins font-bold mb-6">
                 {caseStudy.title}
               </h1>
+              {/* Client name */}
               <p className="text-xl text-gray-300 mb-4">
                 Client: <span className="text-white font-medium">{caseStudy.client}</span>
               </p>
+              {/* Brief description */}
               <p className="text-xl text-gray-300 mb-8">
                 {caseStudy.description}
               </p>
+              {/* CTA button */}
               <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white font-semibold px-6">
                 <Link href="/contact">Discuss Your Project</Link>
               </Button>
@@ -173,10 +210,11 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
         </div>
       </section>
       
-      {/* Challenge & Solution */}
+      {/* Challenge & Solution Section - Two-column layout */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Challenge column */}
             <div>
               <h2 className="text-3xl font-poppins font-bold text-navy mb-6">
                 The Challenge
@@ -186,6 +224,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
               </div>
             </div>
             
+            {/* Solution column */}
             <div>
               <h2 className="text-3xl font-poppins font-bold text-navy mb-6">
                 Our Solution
@@ -198,7 +237,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
         </div>
       </section>
       
-      {/* Results */}
+      {/* Results Section - Checkmarked list of outcomes */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
@@ -212,6 +251,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
             </div>
           </div>
           
+          {/* Results card with checkmark bullets */}
           <div className="max-w-4xl mx-auto">
             <div className="bg-white p-8 rounded-lg shadow-md">
               <ul className="space-y-4">
@@ -231,7 +271,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
         </div>
       </section>
       
-      {/* Technologies Used */}
+      {/* Technologies Used Section - Tags display */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
@@ -239,6 +279,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
               <h2 className="text-3xl font-poppins font-bold text-navy mb-8 text-center">
                 Technologies Used
               </h2>
+              {/* Technology tags */}
               <div className="flex flex-wrap justify-center gap-4">
                 {caseStudy.technologies.map((tech, index) => (
                   <span key={index} className="px-4 py-2 bg-gray-100 text-navy rounded-md text-sm font-medium">
@@ -251,19 +292,22 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
         </div>
       </section>
       
-      {/* Testimonial */}
+      {/* Testimonial Section - Client quote */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="bg-white p-8 md:p-10 rounded-lg shadow-md">
+              {/* Quote icon */}
               <div className="text-teal mb-6">
                 <svg className="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
               </div>
+              {/* Client testimonial quote */}
               <p className="text-xl text-gray-700 mb-8 italic">
-                "{caseStudy.testimonial.quote}"
+                &ldquo;{caseStudy.testimonial.quote}&rdquo;
               </p>
+              {/* Client information with avatar */}
               <div className="flex items-center">
                 <div className="mr-4 w-12 h-12 rounded-full bg-navy text-white flex items-center justify-center text-xl font-semibold">
                   {caseStudy.testimonial.name.charAt(0)}
@@ -278,7 +322,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
         </div>
       </section>
       
-      {/* More Case Studies */}
+      {/* More Case Studies Section - Link to all case studies */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
@@ -287,11 +331,12 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
                 Explore More Case Studies
               </h2>
               <p className="text-gray-600">
-                Discover how we've helped other organizations overcome their technology challenges.
+                Discover how we&lsquove helped other organizations overcome their technology challenges.
               </p>
             </div>
           </div>
           
+          {/* Button to view all case studies */}
           <div className="text-center">
             <Button asChild size="lg" className="bg-navy hover:bg-navy/90 text-white font-semibold px-8">
               <Link href="/case-studies">View All Case Studies</Link>
@@ -300,7 +345,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
         </div>
       </section>
       
-      {/* CTA */}
+      {/* CTA Section - Final call to action */}
       <CTA
         title="Ready to Achieve Similar Results?"
         subtitle="Contact us today to discuss how we can help transform your IT infrastructure."

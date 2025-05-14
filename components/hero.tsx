@@ -36,7 +36,7 @@ const Hero = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-2">
-                <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-black font-semibold px-6 py-3 h-auto rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-navy font-semibold px-6 py-3 h-auto rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                   <Link href="/services">Explore Services</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="bg-white text-navy border-teal hover:bg-navy hover:text-white font-semibold px-6 py-3 h-auto rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-1">

@@ -50,7 +50,7 @@ export default function AboutPage() {
                 About <span className="text-teal">Revee InfoTech</span>
               </h1>
               <p className="text-xl text-gray-700">
-                We're a team of network integration specialists helping businesses build resilient and secure IT infrastructure.
+                We&lsquo;re a team of network integration specialists helping businesses build resilient and secure IT infrastructure.
               </p>
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function AboutPage() {
                   Founded in 2008, Revee InfoTech began with a simple mission: to provide enterprise-grade network solutions that were accessible to businesses of all sizes. Our founder, John Smith, recognized that many small and medium-sized businesses were being underserved by existing IT providers.
                 </p>
                 <p>
-                  Over the years, we've grown from a small team of network engineers to a comprehensive IT solutions provider with expertise across network design, cybersecurity, cloud infrastructure, and managed services.
+                  Over the years, we&lsquo;ve grown from a small team of network engineers to a comprehensive IT solutions provider with expertise across network design, cybersecurity, cloud infrastructure, and managed services.
                 </p>
                 <p>
                   Today, Revee InfoTech serves clients across multiple industries, from healthcare and finance to manufacturing and education. Our team of certified professionals brings decades of combined experience to every project, ensuring your IT infrastructure is reliable, secure, and optimized for performance.
@@ -105,7 +105,7 @@ export default function AboutPage() {
                 Our Mission & Values
               </h2>
               <p className="text-gray-700">
-                We're driven by a commitment to excellence, innovation, and client satisfaction. Our core values guide everything we do.
+                We&lsquo;re driven by a commitment to excellence, innovation, and client satisfaction. Our core values guide everything we do.
               </p>
             </div>
           </div>

@@ -1,13 +1,21 @@
 "use client";
-
+/**
+ * Navigation Bar Component for Revee InfoTech website
+ * Includes responsive design with mobile menu toggle functionality
+ */
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { useState } from "react";
 
+/**
+ * Navbar component that provides site navigation
+ * Features responsive design with hamburger menu for mobile devices
+ */
 const Navbar = () => {
+  // State to track whether mobile menu is open or closed
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Toggle function for mobile menu visibility
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -15,10 +23,12 @@ const Navbar = () => {
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-40">
       <div className="container mx-auto flex items-center justify-between py-3 md:py-4 px-4 md:px-6">
+        {/* Logo and brand name */}
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-xl md:text-2xl font-bold text-navy">Revee InfoTech</span>
         </Link>
         
+        {/* Desktop navigation menu - hidden on mobile */}
         <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
           <Link href="/" className="text-gray-600 hover:text-navy font-medium">
             Home
@@ -37,11 +47,14 @@ const Navbar = () => {
           </Link>
         </nav>
         
+        {/* CTA button and mobile menu toggle */}
         <div className="flex items-center">
+          {/* CTA button - hidden on extra small screens */}
           <Button className="hidden sm:inline-flex bg-teal hover:bg-opacity-90 text-white text-sm px-3 md:px-4 py-1 h-9 md:h-10">
             Request a Quote
           </Button>
           
+          {/* Mobile menu hamburger icon - only visible on mobile */}
           <button 
             className="md:hidden ml-4"
             onClick={toggleMobileMenu}
@@ -54,10 +67,11 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - only renders when mobileMenuOpen is true */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-gray-200 py-4 px-4">
           <nav className="flex flex-col space-y-4">
+            {/* Mobile navigation links - each closes the menu when clicked */}
             <Link 
               href="/" 
               className="text-gray-600 hover:text-navy font-medium py-2"
@@ -93,6 +107,7 @@ const Navbar = () => {
             >
               Contact
             </Link>
+            {/* Mobile CTA button */}
             <div className="pt-2">
               <Button asChild className="w-full bg-teal hover:bg-opacity-90 text-white text-sm py-2">
                 <Link href="/contact">Request a Quote</Link>
