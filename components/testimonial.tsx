@@ -10,7 +10,14 @@ interface TestimonialProps {
   color?: string;
 }
 
+const colorMap: Record<string, string> = {
+  teal: 'bg-teal-500',
+  'blue-500': 'bg-blue-500',
+  'purple-500': 'bg-purple-500',
+};
+
 const Testimonial = ({ quote, name, title, company, image, color = "teal" }: TestimonialProps) => {
+  const bgColor = colorMap[color] || 'bg-teal-500';
   return (
     <div>
       <Card className={`h-full border-gray-200 hover:border-${color}/50 transition-colors duration-300 bg-white shadow-sm hover:shadow-md`}>
@@ -27,7 +34,7 @@ const Testimonial = ({ quote, name, title, company, image, color = "teal" }: Tes
                 <Image src={image} alt={name} fill className="object-cover" />
               </div>
             ) : (
-              <div className={`mr-4 w-12 h-12 rounded-full bg-${color} text-white flex items-center justify-center text-xl font-semibold`}>
+              <div className={`mr-4 w-12 h-12 rounded-full ${bgColor} text-white flex items-center justify-center text-xl font-semibold`}>
                 {name.charAt(0)}
               </div>
             )}

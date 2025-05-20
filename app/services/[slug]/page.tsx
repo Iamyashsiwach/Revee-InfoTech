@@ -127,28 +127,28 @@ const getServiceBySlug = (slug: string) => {
         "Strategic IT planning aligned with business goals",
       ],
     },
-    {
-      slug: "data-backup-recovery",
-      title: "Data Backup & Recovery",
-      description: "Ensure business continuity with robust backup and disaster recovery solutions.",
-      longDescription: "Our data backup and recovery services protect your critical business information from loss. We implement comprehensive backup solutions and disaster recovery plans to ensure your data remains safe and accessible even in worst-case scenarios.",
-      image: "https://images.unsplash.com/photo-1484557052118-f32bd25b45b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&q=80",
-      features: [
-        "Automated backup implementation",
-        "Multi-location data replication",
-        "Disaster recovery planning and testing",
-        "Rapid data restoration capabilities",
-        "Regular backup verification",
-        "Secure offsite storage solutions",
-      ],
-      benefits: [
-        "Protection against data loss from various causes",
-        "Minimized downtime during recovery operations",
-        "Business continuity during and after disasters",
-        "Compliance with data retention requirements",
-        "Peace of mind knowing your data is protected",
-      ],
-    },
+    // {
+    //   slug: "data-backup-recovery",
+    //   title: "Data Backup & Recovery",
+    //   description: "Ensure business continuity with robust backup and disaster recovery solutions.",
+    //   longDescription: "Our data backup and recovery services protect your critical business information from loss. We implement comprehensive backup solutions and disaster recovery plans to ensure your data remains safe and accessible even in worst-case scenarios.",
+    //   image: "https://images.unsplash.com/photo-1484557052118-f32bd25b45b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&q=80",
+    //   features: [
+    //     "Automated backup implementation",
+    //     "Multi-location data replication",
+    //     "Disaster recovery planning and testing",
+    //     "Rapid data restoration capabilities",
+    //     "Regular backup verification",
+    //     "Secure offsite storage solutions",
+    //   ],
+    //   benefits: [
+    //     "Protection against data loss from various causes",
+    //     "Minimized downtime during recovery operations",
+    //     "Business continuity during and after disasters",
+    //     "Compliance with data retention requirements",
+    //     "Peace of mind knowing your data is protected",
+    //   ],
+    // },
     {
       slug: "voip-solutions",
       title: "VoIP Solutions",
@@ -169,6 +169,58 @@ const getServiceBySlug = (slug: string) => {
         "Improved flexibility and mobility",
         "Advanced features not available with traditional phone systems",
         "Simplified management through unified platforms",
+      ],
+    },
+    {
+      slug: "passive-services",
+      title: "Passive Services",
+      description: "Professional passive networking infrastructure design and installation for reliable connectivity.",
+      longDescription: "Our passive services provide expert design and installation of structured cabling, fiber optics, and copper solutions. We ensure your network backbone is reliable, well-documented, and certified for optimal performance.",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000&q=80",
+      features: [
+        "Structured cabling design",
+        "Fiber optic and copper installation",
+        "Rack and patch panel setup",
+        "Labeling and documentation",
+        "Testing and certification",
+      ],
+      benefits: [
+        "Reliable network backbone",
+        "Certified and documented infrastructure",
+        "Reduced downtime and maintenance costs",
+        "Future-proof cabling for upgrades",
+        "Professional installation and support",
+      ],
+    },
+    {
+      slug: "it-consulting",
+      title: "IT Consulting",
+      description: "Strategic technology consulting to drive your business forward with expert guidance and solutions.",
+      longDescription: "Our IT consulting services provide businesses with expert guidance on technology strategy, digital transformation, and IT infrastructure optimization. We help organizations align their technology investments with business goals, improve operational efficiency, and stay ahead of technological trends.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&q=80",
+      features: [
+        "Technology strategy development",
+        "Digital transformation planning",
+        "IT infrastructure assessment",
+        "Cloud migration consulting",
+        "Cybersecurity strategy",
+        "IT governance and compliance",
+        "Technology roadmap development",
+        "Vendor management and selection",
+        "IT budget optimization",
+        "Process improvement consulting"
+      ],
+      benefits: [
+        "Strategic technology alignment with business goals",
+        "Reduced IT costs and improved ROI",
+        "Enhanced operational efficiency",
+        "Better risk management and compliance",
+        "Future-proof technology investments",
+        "Improved decision-making with data-driven insights",
+        "Streamlined IT operations",
+        "Increased competitive advantage",
+        "Scalable technology solutions",
+        "Expert guidance from industry professionals"
       ],
     },
   ];
@@ -192,7 +244,7 @@ export default function Page({ params }: { params: any }) {
   return (
     <>
       {/* Hero Section - Banner image with title overlay */}
-      <section className="relative py-20 md:py-28 bg-navy text-white overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-navy text-navy overflow-hidden">
         {/* Background image with overlay */}
         <div className="absolute inset-0 opacity-30">
           <Image
@@ -210,19 +262,19 @@ export default function Page({ params }: { params: any }) {
           <div className="max-w-3xl">
             <div>
               {/* Service title */}
-              <h1 className="text-4xl md:text-5xl font-poppins font-bold mb-6">
+              <h1 className="text-4xl md:text-5xl font-poppins font-bold mb-6 text-gray-900">
                 {service.title}
               </h1>
               {/* Service long description */}
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-xl text-gray-800 mb-8">
                 {service.longDescription}
               </p>
               {/* CTA buttons */}
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white font-semibold px-6">
+                <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-black font-semibold px-6">
                   <Link href="/contact">Get Started</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="bg-transparent text-white border-white hover:bg-white hover:text-navy font-semibold px-6">
+                <Button asChild variant="outline" size="lg" className="bg-transparent text-gray-900 border-gray-900 hover:bg-gray-900 hover:text-white font-semibold px-6">
                   <Link href="/case-studies">View Case Studies</Link>
                 </Button>
               </div>
@@ -231,50 +283,59 @@ export default function Page({ params }: { params: any }) {
         </div>
       </section>
       
-      {/* Features & Benefits Section - Two-column layout */}
-      <section className="py-16 md:py-24">
+      {/* Features Section */}
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Features column */}
-            <div>
-              <h2 className="text-3xl font-poppins font-bold text-navy mb-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-4xl font-poppins font-bold text-navy mb-4">
                 Key Features
               </h2>
-              <div className="space-y-6">
-                {service.features.map((feature, index) => (
-                  <div key={index} className="flex items-start">
-                    {/* Checkmark icon */}
-                    <div className="mt-1 bg-teal/10 rounded-full p-1.5 mr-4">
-                      <svg className="h-5 w-5 text-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    {/* Feature text */}
-                    <p className="text-gray-700">{feature}</p>
-                  </div>
-                ))}
-              </div>
+              <p className="text-lg text-gray-700">
+                Comprehensive solutions tailored to your business needs
+              </p>
             </div>
             
-            {/* Benefits column */}
-            <div>
-              <h2 className="text-3xl font-poppins font-bold text-navy mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {service.features.map((feature, index) => (
+                <div key={index} className="flex items-start space-x-4 bg-gray-50 p-4 md:p-6 rounded-lg">
+                  <div className="flex-shrink-0 w-8 h-8 bg-teal rounded-full flex items-center justify-center text-white">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p className="text-gray-800">{feature}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Benefits Section */}
+      <section className="py-16 md:py-24 bg-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-4xl font-poppins font-bold text-navy mb-4">
                 Benefits
               </h2>
-              <div className="space-y-6">
-                {service.benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start">
-                    {/* Shield icon */}
-                    <div className="mt-1 bg-teal/10 rounded-full p-1.5 mr-4">
-                      <svg className="h-5 w-5 text-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                      </svg>
-                    </div>
-                    {/* Benefit text */}
-                    <p className="text-gray-700">{benefit}</p>
+              <p className="text-lg text-gray-700">
+                Why choose our services for your business
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {service.benefits.map((benefit, index) => (
+                <div key={index} className="flex items-start space-x-4 bg-white p-4 md:p-6 rounded-lg shadow-sm">
+                  <div className="flex-shrink-0 w-8 h-8 bg-teal rounded-full flex items-center justify-center text-white">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                   </div>
-                ))}
-              </div>
+                  <p className="text-gray-800">{benefit}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -355,7 +416,7 @@ export default function Page({ params }: { params: any }) {
           
           {/* Button to view all services */}
           <div className="text-center">
-            <Button asChild size="lg" className="bg-navy hover:bg-navy/90 text-white font-semibold px-8">
+            <Button asChild size="lg" className="bg-navy hover:bg-navy/90 text-black font-semibold px-8">
               <Link href="/services">View All Services</Link>
             </Button>
           </div>

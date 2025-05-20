@@ -50,15 +50,15 @@ export default function ServicesPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
         </svg>
       ),
-      title: "Cloud Solutions",
-      description: "Seamlessly migrate and manage your infrastructure in the cloud for better scalability.",
-      slug: "cloud-solutions",
+      title: "Passive Services",
+      description: "Professional passive networking infrastructure design and installation for reliable connectivity.",
+      slug: "passive-services",
       features: [
-        "Cloud migration planning",
-        "AWS/Azure/GCP implementation",
-        "Hybrid cloud solutions",
-        "Cloud security",
-        "Cost optimization",
+        "Structured cabling design",
+        "Fiber optic and copper installation",
+        "Rack and patch panel setup",
+        "Labeling and documentation",
+        "Testing and certification",
       ],
     },
     {
@@ -78,23 +78,23 @@ export default function ServicesPage() {
         "IT strategy consulting",
       ],
     },
-    {
-      icon: (
-        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-      ),
-      title: "Data Backup & Recovery",
-      description: "Ensure business continuity with robust backup and disaster recovery solutions.",
-      slug: "data-backup-recovery",
-      features: [
-        "Automated backups",
-        "Offsite replication",
-        "Disaster recovery planning",
-        "Fast data restoration",
-        "Recovery testing",
-      ],
-    },
+    // {
+    //   icon: (
+    //     <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    //     </svg>
+    //   ),
+    //   title: "Data Backup & Recovery",
+    //   description: "Ensure business continuity with robust backup and disaster recovery solutions.",
+    //   slug: "data-backup-recovery",
+    //   features: [
+    //     "Automated backups",
+    //     "Offsite replication",
+    //     "Disaster recovery planning",
+    //     "Fast data restoration",
+    //     "Recovery testing",
+    //   ],
+    // },
     {
       icon: (
         <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -112,23 +112,23 @@ export default function ServicesPage() {
         "Call center solutions",
       ],
     },
-    {
-      icon: (
-        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      ),
-      title: "IT Compliance & Governance",
-      description: "Ensure your IT infrastructure meets regulatory requirements and industry standards.",
-      slug: "compliance-governance",
-      features: [
-        "Compliance assessment",
-        "Policy development",
-        "Security controls",
-        "Audit preparation",
-        "Regulatory reporting",
-      ],
-    },
+    // {
+    //   icon: (
+    //     <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    //     </svg>
+    //   ),
+    //   title: "IT Compliance & Governance",
+    //   description: "Ensure your IT infrastructure meets regulatory requirements and industry standards.",
+    //   slug: "compliance-governance",
+    //   features: [
+    //     "Compliance assessment",
+    //     "Policy development",
+    //     "Security controls",
+    //     "Audit preparation",
+    //     "Regulatory reporting",
+    //   ],
+    // },
     {
       icon: (
         <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -232,14 +232,14 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            <div className="text-center bg-white p-8 rounded-lg shadow-lg border-t-4 border-teal hover:transform hover:-translate-y-1 transition-transform duration-300">
-              <div className="relative">
-                <div className="w-16 h-16 bg-teal text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            {/* Step 1 */}
+            <div className="relative text-center bg-white p-8 rounded-lg shadow-lg border-t-4 border-teal hover:transform hover:-translate-y-1 transition-transform duration-300">
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 bg-teal text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 z-10 border-4 border-white shadow-md">
                   1
                 </div>
-                <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-teal/30">
-                  <div className="absolute right-0 -top-1.5 w-3 h-3 bg-teal rounded-full"></div>
-                </div>
+                {/* Connector line */}
+                <div className="hidden lg:block absolute top-1/2 left-full w-16 h-0.5 bg-teal/30 z-0"></div>
               </div>
               <h3 className="text-xl font-poppins font-semibold text-navy mb-2">Discovery</h3>
               <p className="text-gray-600">
@@ -247,14 +247,14 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="text-center bg-white p-8 rounded-lg shadow-lg border-t-4 border-blue-500 hover:transform hover:-translate-y-1 transition-transform duration-300">
-              <div className="relative">
-                <div className="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            {/* Step 2 */}
+            <div className="relative text-center bg-white p-8 rounded-lg shadow-lg border-t-4 border-blue-500 hover:transform hover:-translate-y-1 transition-transform duration-300">
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 z-10 border-4 border-white shadow-md">
                   2
                 </div>
-                <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-blue-500/30">
-                  <div className="absolute right-0 -top-1.5 w-3 h-3 bg-blue-500 rounded-full"></div>
-                </div>
+                {/* Connector line */}
+                <div className="hidden lg:block absolute top-1/2 left-full w-16 h-0.5 bg-blue-500/30 z-0"></div>
               </div>
               <h3 className="text-xl font-poppins font-semibold text-navy mb-2">Strategy</h3>
               <p className="text-gray-600">
@@ -262,14 +262,14 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="text-center bg-white p-8 rounded-lg shadow-lg border-t-4 border-purple-500 hover:transform hover:-translate-y-1 transition-transform duration-300">
-              <div className="relative">
-                <div className="w-16 h-16 bg-purple-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            {/* Step 3 */}
+            <div className="relative text-center bg-white p-8 rounded-lg shadow-lg border-t-4 border-purple-500 hover:transform hover:-translate-y-1 transition-transform duration-300">
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 bg-purple-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 z-10 border-4 border-white shadow-md">
                   3
                 </div>
-                <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-purple-500/30">
-                  <div className="absolute right-0 -top-1.5 w-3 h-3 bg-purple-500 rounded-full"></div>
-                </div>
+                {/* Connector line */}
+                <div className="hidden lg:block absolute top-1/2 left-full w-16 h-0.5 bg-purple-500/30 z-0"></div>
               </div>
               <h3 className="text-xl font-poppins font-semibold text-navy mb-2">Implementation</h3>
               <p className="text-gray-600">
@@ -277,9 +277,12 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="text-center bg-white p-8 rounded-lg shadow-lg border-t-4 border-green-500 hover:transform hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                4
+            {/* Step 4 */}
+            <div className="relative text-center bg-white p-8 rounded-lg shadow-lg border-t-4 border-green-500 hover:transform hover:-translate-y-1 transition-transform duration-300">
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 z-10 border-4 border-white shadow-md">
+                  4
+                </div>
               </div>
               <h3 className="text-xl font-poppins font-semibold text-navy mb-2">Ongoing Support</h3>
               <p className="text-gray-600">

@@ -68,13 +68,17 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  Founded in 2008, Revee InfoTech began with a simple mission: to provide enterprise-grade network solutions that were accessible to businesses of all sizes. Our founder, John Smith, recognized that many small and medium-sized businesses were being underserved by existing IT providers.
+                At Revee Infotech, our journey began with a vision to bridge the gap between cutting-edge technology and real-world business needs. Founded on the principles of innovation, reliability, and customer-centricity, we've grown into a trusted partner for businesses seeking digital transformation.
                 </p>
                 <p>
-                  Over the years, we&lsquo;ve grown from a small team of network engineers to a comprehensive IT solutions provider with expertise across network design, cybersecurity, cloud infrastructure, and managed services.
+                From our early days focusing on network device sales and support, we quickly expanded our expertise to include structured cabling, CCTV installation, and advanced IT infrastructure services. As technology evolved, so did we—diving deep into cloud computing, data analytics, and enterprise mobility to offer end-to-end solutions that empower businesses to scale efficiently and securely.
                 </p>
                 <p>
-                  Today, Revee InfoTech serves clients across multiple industries, from healthcare and finance to manufacturing and education. Our team of certified professionals brings decades of combined experience to every project, ensuring your IT infrastructure is reliable, secure, and optimized for performance.
+                What sets us apart is our team of certified professionals who don’t just implement technology—they align it with your unique business goals. Whether you're building from the ground up or enhancing existing systems, we provide a seamless experience from consultation to implementation and ongoing support.
+              
+                </p>
+                <p>
+                Revee Infotech is more than an IT service provider—we are your digital transformation partner, committed to helping you stay ahead in a fast-paced, tech-driven world.
                 </p>
               </div>
             </div>
@@ -111,8 +115,8 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center border-t-4 border-teal hover:transform hover:-translate-y-1 transition-transform duration-300">
-              <div className="text-teal mb-4 mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-teal/10">
+          <div className="bg-white p-8 rounded-lg shadow-lg text-center border-t-4 border-blue-500 hover:transform hover:-translate-y-1 transition-transform duration-300">
+           <div className="text-blue-500 mb-4 mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-blue-500/10">
                 <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -123,8 +127,8 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center border-t-4 border-navy hover:transform hover:-translate-y-1 transition-transform duration-300">
-              <div className="text-navy mb-4 mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-navy/10">
+            <div className="bg-white p-8 rounded-lg shadow-lg text-center border-t-4 border-blue-500 hover:transform hover:-translate-y-1 transition-transform duration-300">
+            <div className="text-blue-500 mb-4 mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-blue-500/10">
                 <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                 </svg>
@@ -150,7 +154,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Team */}
+      {/* Our Team
       <section className="py-16 md:py-24 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
@@ -186,7 +190,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <CTA

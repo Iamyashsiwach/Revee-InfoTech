@@ -121,24 +121,24 @@ export default function Home() {
    */
   const testimonials = [
     {
-      quote: "Revee InfoTech transformed our infrastructure, improving speed and reliability across all our locations. Their team was professional and knowledgeable from planning to implementation.",
-      name: "Sarah Johnson",
-      title: "CTO",
-      company: "TechGlobal Inc.",
+      quote: "Revee InfoTech provided seamless network cabling for our new office. The team was punctual, professional, and ensured everything was perfectly organized.",
+      name: "Amit Sharma",
+      title: "IT Manager",
+      company: "Reliant Logistics",
       color: "teal",
     },
     {
-      quote: "The cybersecurity solutions provided by Revee InfoTech have given us peace of mind. They identified vulnerabilities we weren't aware of and implemented robust protection systems.",
-      name: "Michael Chen",
-      title: "IT Director",
-      company: "Secure Financial",
+      quote: "We were impressed by their technical expertise and transparent communication. Our network is now faster and more reliable than ever.",
+      name: "Priya Nair",
+      title: "Head of Operations",
+      company: "Bharat Manufacturing",
       color: "blue-500",
     },
     {
-      quote: "Our cloud migration was seamless thanks to Revee InfoTech. Their team handled everything professionally, and we experienced zero downtime during the transition.",
-      name: "Jennifer Reynolds",
-      title: "Operations Manager",
-      company: "CloudConnect",
+      quote: "The Revee InfoTech team handled our campus-wide upgrade with minimal disruption. Their documentation and support have been excellent.",
+      name: "Rohit Verma",
+      title: "Systems Administrator",
+      company: "Medico Health Group",
       color: "purple-500",
     },
   ];
@@ -179,7 +179,7 @@ export default function Home() {
 
           {/* Services CTA button */}
           <div className="text-center mt-10">
-            <Button asChild className="bg-teal hover:bg-teal/90 text-white">
+            <Button asChild className="bg-teal hover:bg-teal/90 text-black">
               <Link href="/services">View All Services</Link>
             </Button>
           </div>
@@ -229,7 +229,7 @@ export default function Home() {
                 Why Choose <span className="text-teal">Revee InfoTech</span>?
               </h2>
               <p className="text-gray-700 mb-8">
-                With over 15 years of experience in network integration, we bring expertise and reliability to every project. Our team of certified professionals ensures that your network infrastructure is optimized for performance, security, and scalability.
+                With over experience in network integration, we bring expertise and reliability to every project. Our team of certified professionals ensures that your network infrastructure is optimized for performance, security, and scalability.
               </p>
               
               <div className="space-y-6">
