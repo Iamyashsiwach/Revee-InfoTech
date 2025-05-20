@@ -7,7 +7,7 @@ const transporter = nodemailer.createTransport({
   port: Number(process.env.SMTP_PORT) || 465, // Default to 465 for SSL
   secure: true, // Use SSL
   auth: {
-    user: process.env.SMTP_USER || 'info@reveeinfotech.com', // Company email
+    user: process.env.SMTP_USER || 'yash.siwach@reveeinfotech.com', // Company email
     pass: process.env.SMTP_PASS,
   },
   tls: {
@@ -26,6 +26,7 @@ transporter.verify(function (error, success) {
 });
 
 export async function POST(request: Request) {
+  console.log("API route hit");
   try {
     const body = await request.json();
     const { name, email, phone, company, subject, message } = body;
