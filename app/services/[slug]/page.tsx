@@ -295,16 +295,19 @@ export default function Page({ params }: { params: any }) {
                 Comprehensive solutions tailored to your business needs
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {/* Compact features grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {service.features.map((feature, index) => (
-                <div key={index} className="flex items-start space-x-4 bg-gray-50 p-4 md:p-6 rounded-lg">
-                  <div className="flex-shrink-0 w-8 h-8 bg-teal rounded-full flex items-center justify-center text-white">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div
+                  key={index}
+                  className="group bg-gradient-to-br from-white via-blue-50 to-teal/10 p-4 rounded-xl shadow-md border border-teal/10 hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center hover:-translate-y-1"
+                >
+                  <div className="flex items-center justify-center w-10 h-10 mb-2 rounded-full bg-teal/10 group-hover:bg-teal/20 transition-colors">
+                    <svg className="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="text-gray-800">{feature}</p>
+                  <p className="text-base text-gray-900 font-medium">{feature}</p>
                 </div>
               ))}
             </div>
@@ -324,16 +327,19 @@ export default function Page({ params }: { params: any }) {
                 Why choose our services for your business
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {/* Compact benefits grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {service.benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start space-x-4 bg-white p-4 md:p-6 rounded-lg shadow-sm">
-                  <div className="flex-shrink-0 w-8 h-8 bg-teal rounded-full flex items-center justify-center text-white">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div
+                  key={index}
+                  className="group bg-gradient-to-br from-white via-blue-100 to-teal/10 p-4 rounded-xl shadow-md border border-blue-200 hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center hover:-translate-y-1"
+                >
+                  <div className="flex items-center justify-center w-10 h-10 mb-2 rounded-full bg-blue-200/30 group-hover:bg-blue-300/40 transition-colors">
+                    <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <p className="text-gray-800">{benefit}</p>
+                  <p className="text-base text-gray-900 font-medium">{benefit}</p>
                 </div>
               ))}
             </div>

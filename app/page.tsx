@@ -44,9 +44,9 @@ export default function Home() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
         </svg>
       ),
-      title: "Cloud Solutions",
+      title: "Passive Services",
       description: "Seamlessly migrate and manage your infrastructure in the cloud for better scalability.",
-      slug: "cloud-solutions",
+      slug: "passive-services",
       color: "purple-500",
     },
     {
@@ -325,7 +325,7 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Stats Section */}
+      {/* Stats Section
       <section className="py-16 md:py-20 bg-teal text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -347,7 +347,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       
       {/* Testimonials Section */}
       <section className="py-16 md:py-24 bg-blue-50 relative overflow-hidden">

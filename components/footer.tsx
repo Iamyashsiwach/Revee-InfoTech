@@ -94,6 +94,9 @@ const Footer = () => {
         {/* Copyright section */}
         <div className="border-t border-gray-700 mt-8 md:mt-10 pt-4 md:pt-6 text-center text-xs md:text-sm text-gray-400">
           <p>&copy; {new Date().getFullYear()} Revee InfoTech. All rights reserved.</p>
+          <p className="mt-1">
+            Designed and developed by <a href="https://www.yashsiwach.space" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:underline">Yash Siwach</a>
+          </p>
         </div>
       </div>
     </footer>

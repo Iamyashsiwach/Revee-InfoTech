@@ -46,7 +46,7 @@ const Hero = () => {
               
               <div className="flex flex-wrap gap-3 pt-4">
                 <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs">Cybersecurity</span>
-                <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs">Cloud Solutions</span>
+                <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs">Passive Services</span>
                 <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs">Managed IT</span>
                 <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs">Network Design</span>
               </div>
@@ -63,7 +63,7 @@ const Hero = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white z-10">
                 <div className="aspect-video relative">
                   <Image
-                    src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                    src="/hero.png"
                     alt="Modern network infrastructure"
                     fill
                     className="object-cover"
@@ -79,12 +79,12 @@ const Hero = () => {
                   <span className="font-medium text-sm">Enterprise Security</span>
                 </div>
                 
-                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm text-blue-600 p-2 rounded-lg shadow-lg flex items-center gap-2">
+                {/* <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm text-blue-600 p-2 rounded-lg shadow-lg flex items-center gap-2">
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                   <span className="font-medium text-sm">High Performance</span>
-                </div>
+                </div> */}
               </div>
             </div>
             

@@ -7,6 +7,7 @@ import { Open_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Head from "next/head";
 
 // Configure Poppins font for headings with specific weights
 const poppins = Poppins({
@@ -41,6 +42,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Revee InfoTech",
+              url: "https://reveeinfotech.com",
+              logo: "https://reveeinfotech.com/logo.png",
+              sameAs: [
+                "https://www.linkedin.com/company/revee-infotech-private-limited",
+                "https://www.instagram.com/reveeinfotech/"
+              ],
+              contactPoint: [{
+                "@type": "ContactPoint",
+                telephone: "+91 8950803350",
+                contactType: "customer service",
+                areaServed: "IN",
+                availableLanguage: ["English", "Hindi"]
+              }]
+            })
+          }}
+        />
+      </Head>
       <body className={`${poppins.variable} ${openSans.variable} font-open-sans antialiased`}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
