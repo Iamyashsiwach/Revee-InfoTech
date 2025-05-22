@@ -63,7 +63,7 @@ const Hero = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white z-10">
                 <div className="aspect-video relative">
                   <Image
-                    src="/hero.png"
+                    src="/hero.jpg"
                     alt="Modern network infrastructure"
                     fill
                     className="object-cover"
