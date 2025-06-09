@@ -115,8 +115,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-base md:text-lg font-semibold text-navy mb-1 md:mb-2">Office Address</h3>
                     <p className="text-sm md:text-base text-gray-700">
-                      Unit No 511, 5th Floor Emerald Plaza<br />
-                      Sector 65 Gurgaon 122102
+                    Cabin No 4, 3rd Floor, Oahfeo Coworking Space,<br />
+                    Sector 45 Gurgaon 122003
                     </p>
                   </div>
                 </div>
@@ -312,7 +312,7 @@ export default function ContactPage() {
           <div className="bg-white rounded-lg overflow-hidden shadow-xl border-4 border-gray-100">
             <div className="relative h-[400px] md:h-[500px] w-full">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.2233913121413!2d77.0681823!3d28.4057186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23f90bae9065%3A0x15a98af4497f08a3!2sDizilooks!5e0!3m2!1sen!2sin!4v1709791234567!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112.43968590964445!2d77.05986358594269!3d28.444690300000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1943b30191d7%3A0xc915422ab30615d6!2sOahfeo%20Workspaces%20-%20Best%20Coworking%20Space%20Gurugram%20Sector%2045%20%7C%20Private%20Office%20on%20Rent%20%7C%20Virtual%20Office!5e0!3m2!1sen!2sin!4v1713476890584!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -322,9 +322,10 @@ export default function ContactPage() {
                 className="absolute inset-0"
               ></iframe>
             </div>
+            {/* Optional directions link - currently commented out */}
             {/* <div className="p-4 bg-white border-t border-gray-100">
               <a 
-                href="https://www.google.co.in/maps/place/Dizilooks/@28.4057186,77.0681823,21z/data=!4m6!3m5!1s0x390d23f90bae9065:0x15a98af4497f08a3!8m2!3d28.4058221!4d77.0683003!16s%2Fg%2F11y8kqzk82?entry=ttu"
+                href="https://www.google.com/maps/place/Oahfeo+Workspaces+-+Best+Coworking+Space+Gurugram+Sector+45+%7C+Private+Office+on+Rent+%7C+Virtual+Office/@28.4446903,77.0598636,21z/data=!3m1!5s0x390d17f13d95e89b:0xb83793a3fd870d26!4m6!3m5!1s0x390d1943b30191d7:0xc915422ab30615d6!8m2!3d28.4446401!4d77.0597294!16s%2Fg%2F11sckjhxz9?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 bg-teal text-black rounded-lg hover:bg-teal/90 transition-colors"
