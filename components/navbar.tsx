@@ -49,10 +49,15 @@ const Navbar = () => {
         
         {/* CTA button and mobile menu toggle */}
         <div className="flex items-center">
-          {/* CTA button - hidden on extra small screens */}
-          <Button className="hidden sm:inline-flex bg-teal hover:bg-opacity-90 text-white text-sm px-3 md:px-4 py-1 h-9 md:h-10">
-            Request a Quote
-          </Button>
+          {/* CTA buttons - hidden on extra small screens */}
+          <div className="hidden sm:flex space-x-2">
+            <Button asChild variant="outline" className="text-sm px-3 md:px-4 py-1 h-9 md:h-10">
+              <Link href="/auth/register">Register</Link>
+            </Button>
+            <Button asChild className="bg-teal-500 hover:bg-teal-600 text-white text-sm px-3 md:px-4 py-1 h-9 md:h-10">
+              <Link href="/auth/signin">Login</Link>
+            </Button>
+          </div>
           
           {/* Mobile menu hamburger icon - only visible on mobile */}
           <button 
@@ -107,10 +112,13 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            {/* Mobile CTA button */}
-            <div className="pt-2">
-              <Button asChild className="w-full bg-teal hover:bg-opacity-90 text-white text-sm py-2">
-                <Link href="/contact">Request a Quote</Link>
+            {/* Mobile CTA buttons */}
+            <div className="pt-2 space-y-2">
+              <Button asChild variant="outline" className="w-full text-sm py-2">
+                <Link href="/auth/register">Register</Link>
+              </Button>
+              <Button asChild className="w-full bg-teal-500 hover:bg-teal-600 text-white text-sm py-2">
+                <Link href="/auth/signin">Login</Link>
               </Button>
             </div>
           </nav>

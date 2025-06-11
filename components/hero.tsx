@@ -11,11 +11,11 @@ const Hero = () => {
       <div className="absolute top-0 left-0 w-full h-full z-0">
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-0 left-0 w-3/4 h-full bg-gradient-to-r from-blue-50 to-transparent"></div>
-          <div className="absolute bottom-0 right-0 w-3/4 h-4/5 bg-gradient-to-l from-teal/5 to-transparent"></div>
+          <div className="absolute bottom-0 right-0 w-3/4 h-4/5 bg-gradient-to-l from-teal-500/5 to-transparent"></div>
         </div>
         <div className="absolute top-0 right-0 h-full w-1/2 -skew-x-12 transform origin-top-right bg-blue-50/70 z-0"></div>
-        <div className="absolute top-20 right-40 h-40 w-40 rounded-full bg-teal/10 z-0"></div>
-        <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-teal via-blue-500 to-purple-500 z-10"></div>
+        <div className="absolute top-20 right-40 h-40 w-40 rounded-full bg-teal-500/10 z-0"></div>
+        <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 z-10"></div>
       </div>
       
       <div className="container mx-auto relative z-10 px-4 md:px-6">
