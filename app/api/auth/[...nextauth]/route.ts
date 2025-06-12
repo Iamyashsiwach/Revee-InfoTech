@@ -44,32 +44,44 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
+          console.log("No credentials provided");
           return null;
         }
 
-        await connectToDatabase();
-        
-        const user = await User.findOne({ email: credentials.email });
-        
-        if (!user) {
-          return null;
-        }
-        
-        const isValid = await user.comparePassword(credentials.password);
-        
-        if (!isValid) {
-          return null;
-        }
+        try {
+          console.log(`Attempting to connect to MongoDB for email: ${credentials.email}`);
+          await connectToDatabase();
+          console.log("Database connected successfully");
+          
+          const user = await User.findOne({ email: credentials.email });
+          
+          if (!user) {
+            console.log(`No user found with email: ${credentials.email}`);
+            return null;
+          }
+          
+          console.log(`User found: ${user.email}, checking password`);
+          const isValid = await user.comparePassword(credentials.password);
+          
+          if (!isValid) {
+            console.log("Password comparison failed");
+            return null;
+          }
 
-        return {
-          id: user._id.toString(),
-          name: user.name,
-          email: user.email,
-          role: user.role,
-          department: user.department,
-          position: user.position,
-          image: user.imageUrl || null,
-        };
+          console.log("Authentication successful");
+          return {
+            id: user._id.toString(),
+            name: user.name,
+            email: user.email,
+            role: user.role,
+            department: user.department,
+            position: user.position,
+            image: user.imageUrl || null,
+          };
+        } catch (error) {
+          console.error("Authentication error:", error);
+          return null;
+        }
       }
     })
   ],
@@ -102,6 +114,7 @@ export const authOptions: NextAuthOptions = {
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   secret: process.env.NEXTAUTH_SECRET,
+  debug: true,
 };
 
 const handler = NextAuth(authOptions);
