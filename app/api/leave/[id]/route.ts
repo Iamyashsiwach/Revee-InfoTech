@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 
 // Get a single leave request by ID
 export async function GET(
-  req: NextRequest,
+  request: Request,
   { params }: { params: { id: string } }
 ) {
   try {
@@ -63,7 +63,7 @@ export async function GET(
 
 // Update a leave request
 export async function PATCH(
-  req: NextRequest,
+  request: Request,
   { params }: { params: { id: string } }
 ) {
   try {
@@ -83,7 +83,7 @@ export async function PATCH(
     await connectToDatabase();
 
     const { id } = params;
-    const { status } = await req.json();
+    const { status } = await request.json();
 
     // Validate ID
     if (!mongoose.isValidObjectId(id)) {
@@ -131,7 +131,7 @@ export async function PATCH(
 
 // Delete a leave request (only allowed for pending requests)
 export async function DELETE(
-  req: NextRequest,
+  request: Request,
   { params }: { params: { id: string } }
 ) {
   try {

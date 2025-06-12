@@ -9,7 +9,7 @@ const Task = mongoose.models.Task;
 
 // Get a single task
 export async function GET(
-  req: NextRequest,
+  request: Request,
   { params }: { params: { id: string } }
 ) {
   try {
@@ -65,7 +65,7 @@ export async function GET(
 
 // Update a task
 export async function PATCH(
-  req: NextRequest,
+  request: Request,
   { params }: { params: { id: string } }
 ) {
   try {
@@ -97,7 +97,7 @@ export async function PATCH(
       }
 
       // Only allow updating status
-      const { status } = await req.json();
+      const { status } = await request.json();
       if (!status) {
         return NextResponse.json(
           { error: 'Missing status field' },
@@ -120,7 +120,7 @@ export async function PATCH(
     
     // For admins, allow updating all fields
     else if (['admin', 'super-admin'].includes(session.user?.role as string)) {
-      const updates = await req.json();
+      const updates = await request.json();
       
       // Build update object
       const updateData: any = {};
@@ -159,7 +159,7 @@ export async function PATCH(
 
 // Delete a task
 export async function DELETE(
-  req: NextRequest,
+  request: Request,
   { params }: { params: { id: string } }
 ) {
   try {

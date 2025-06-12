@@ -6,7 +6,7 @@ import { User } from '@/lib/models';
 
 // Get a single user by ID
 export async function GET(
-  req: NextRequest,
+  request: Request,
   { params }: { params: { id: string } }
 ) {
   try {
@@ -44,7 +44,7 @@ export async function GET(
 
 // Update a user
 export async function PATCH(
-  req: NextRequest,
+  request: Request,
   { params }: { params: { id: string } }
 ) {
   try {
@@ -59,7 +59,7 @@ export async function PATCH(
     await connectToDatabase();
 
     // Get update data from request
-    const { role, isActive, department, position } = await req.json();
+    const { role, isActive, department, position } = await request.json();
     
     // Check permissions for role changes (only super-admin can change roles)
     if (role !== undefined && session.user?.role !== 'super-admin') {
@@ -111,7 +111,7 @@ export async function PATCH(
 
 // Delete a user
 export async function DELETE(
-  req: NextRequest,
+  request: Request,
   { params }: { params: { id: string } }
 ) {
   try {
